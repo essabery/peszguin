@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<package name="tournoi" namespace="/tournoi" extends="default">
+
+		<action name="accueil" class="pes.ihm.action.tournoi.Accueil">
+			<result>tournoi.accueil</result>
+		</action>
+
+		<action name="creation" class="pes.ihm.action.tournoi.Creation"
+			method="initialiser">
+			<result>tournoi.creation</result>
+		</action>
+		<action name="ajoutEquipes" class="pes.ihm.action.tournoi.Creation"
+			method="ajouterEquipes">
+			<result name="success">tournoi.creation</result>
+		</action>
+		<action name="suppressionEquipes" class="pes.ihm.action.tournoi.Creation"
+			method="supprimerEquipes">
+			<result name="success">tournoi.creation</result>
+		</action>
+		<action name="ajoutParticipants" class="pes.ihm.action.tournoi.Creation"
+			method="ajouterParticipants">
+			<result name="success">tournoi.creation</result>
+		</action>
+		<action name="suppressionParticipants" class="pes.ihm.action.tournoi.Creation"
+			method="supprimerParticipants">
+			<result name="success">tournoi.creation</result>
+		</action>
+
+
+		<action name="validerCreation" class="pes.ihm.action.tournoi.Creation"
+			method="validerCreation">
+			<result name="success">tournoi.creation</result>
+			<result name="input">tournoi.creation</result>
+			<result name="error">tournoi.creation</result>
+		</action>
+
+		<action name="consultation" class="pes.ihm.action.tournoi.Consultation"
+			method="initialiser">
+			<result>tournoi.consultation</result>
+		</action>
+
+		<action name="afficherTournoi" class="pes.ihm.action.tournoi.Consultation"
+			method="afficher">
+			<result>tournoi.consultation</result>
+		</action>
+
+		<action name="afficherMatch" class="pes.ihm.action.tournoi.Consultation"
+			method="afficherMatch">
+			<result>tournoi.consultation</result>
+		</action>
+
+		<action name="evolution" class="pes.ihm.action.tournoi.Evolution"
+			method="initialiser">
+			<result>tournoi.evolution</result>
+		</action>
+
+		<action name="choixTournoi" class="pes.ihm.action.tournoi.Evolution"
+			method="choixTournoi">
+			<result name="phase1" type="redirectAction">phase1Init</result>
+			<result name="phase2" type="redirectAction">phase2Init</result>
+			<result name="phase3" type="redirectAction">phase3Init</result>
+			<result name="phase4" type="redirectAction">phase4Init</result>
+			<result name="input">tournoi.evolution</result>
+			<result name="error">tournoi.evolution</result>
+		</action>
+
+		<action name="phase1Init" class="pes.ihm.action.tournoi.Evolution"
+			method="phase1Init">
+			<result>tournoi.evolutionPhase1</result>
+		</action>
+		<action name="phase1Valider" class="pes.ihm.action.tournoi.Evolution"
+			method="phase1Valider">
+			<result>tournoi.evolutionPhase2Init</result>
+			<result name="input">tournoi.evolutionPhase1</result>
+		</action>
+
+		<action name="phase2Init" class="pes.ihm.action.tournoi.Evolution"
+			method="phase2Init">
+			<result>tournoi.evolutionPhase2</result>
+		</action>
+
+		<action name="modifMatchPoule" class="pes.ihm.action.tournoi.Evolution"
+			method="modifMatch">
+			<result>tournoi.evolutionPhase2</result>
+		</action>
+		<action name="addEvenement" class="pes.ihm.action.tournoi.Evolution"
+			method="addEvenement">
+			<result>tournoi.evolutionPhase2</result>
+		</action>
+		<action name="resetMatch" class="pes.ihm.action.tournoi.Evolution"
+			method="resetMatch">
+			<result>tournoi.evolutionPhase2</result>
+		</action>
+		<action name="validerMatch" class="pes.ihm.action.tournoi.Evolution"
+			method="validerMatch">
+			<result>tournoi.evolutionPhase2</result>
+		</action>
+
+		<action name="phase2Valider" class="pes.ihm.action.tournoi.Evolution"
+			method="phase2Valider">
+			<result>tournoi.evolutionPhase3Init</result>
+		</action>
+
+		<action name="phase3Init" class="pes.ihm.action.tournoi.Evolution"
+			method="phase3Init">
+			<result>tournoi.evolutionPhase3</result>
+		</action>
+		<action name="modifMatchFinal" class="pes.ihm.action.tournoi.Evolution"
+			method="modifMatchFinal">
+			<result>tournoi.evolutionPhase3</result>
+		</action>
+		<action name="addEvenementFinal" class="pes.ihm.action.tournoi.Evolution"
+			method="addEvenementFinal">
+			<result>tournoi.evolutionPhase3</result>
+		</action>
+		<action name="resetMatchFinal" class="pes.ihm.action.tournoi.Evolution"
+			method="resetMatchFinal">
+			<result>tournoi.evolutionPhase3</result>
+		</action>
+		<action name="validerMatchFinal" class="pes.ihm.action.tournoi.Evolution"
+			method="validerMatchFinal">
+			<result>tournoi.evolutionPhase3</result>
+		</action>
+		<action name="validationFinale" class="pes.ihm.action.tournoi.Evolution"
+			method="validationFinale">
+			<result type="redirectAction">evolution</result>
+		</action>
+
+		<action name="phase4Init" class="pes.ihm.action.tournoi.Evolution"
+			method="phase4Init">
+			<result type="redirectAction">evolution</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+	<!-- Pages de base pour le domaine (titre) -->
+	<definition name="sansOnglet.tournoi.page" extends="sansOnglet.page">
+		<put-attribute name="titre" value="Tournois PES - Tournois" />
+	</definition>
+
+	<definition name="tournoi.page" extends="sansOnglet.tournoi.page">
+		<put-attribute name="titre" value="Tournois PES - Tournois" />
+	</definition>
+
+	<!-- Pages affichées -->
+	<definition name="tournoi.accueil" extends="tournoi.page">
+		<put-attribute name="contextMenu" value="tournoi" />
+		<put-attribute name="contenu" value="/jsp/tournoi/accueilContenu.jsp" />
+		<put-attribute name="messageInfo" value="/jsp/tournoi/accueilInfo.jsp" />
+	</definition>
+
+	<definition name="tournoi.creation" extends="tournoi.page">
+		<put-attribute name="contextMenu" value="creationTournoi" />
+		<put-attribute name="contenu" value="/jsp/tournoi/creationContenu.jsp" />
+		<put-attribute name="messageInfo" value="/jsp/tournoi/creationSucces.jsp" />
+		<put-attribute name="messageErreur" value="/jsp/tournoi/creationErreur.jsp" />
+	</definition>
+
+	<definition name="tournoi.consultation" extends="tournoi.page">
+		<put-attribute name="contextMenu" value="consultationTournoi" />
+		<put-attribute name="contenu"
+			value="/jsp/tournoi/consultationContenu.jsp" />
+		<put-attribute name="messageInfo"
+			value="/jsp/tournoi/consultationSupprimerSucces.jsp" />
+		<put-attribute name="messageErreur"
+			value="/jsp/tournoi/consultationSupprimerErreur.jsp" />
+	</definition>
+
+	<definition name="tournoi.evolution" extends="tournoi.page">
+		<put-attribute name="contextMenu" value="evolutionTournoi" />
+		<put-attribute name="contenu" value="/jsp/tournoi/evolutionContenu.jsp" />
+	</definition>
+
+	<definition name="tournoi.evolutionPhase1" extends="tournoi.page">
+		<put-attribute name="contextMenu" value="evolutionTournoi" />
+		<put-attribute name="contenu"
+			value="/jsp/tournoi/evolutionPhase1Contenu.jsp" />
+	</definition>
+
+	<definition name="tournoi.evolutionPhase2Init" extends="tournoi.page">
+		<put-attribute name="contextMenu" value="evolutionTournoi" />
+		<put-attribute name="contenu"
+			value="/jsp/tournoi/evolutionPhase2InitContenu.jsp" />
+	</definition>
+	<definition name="tournoi.evolutionPhase2" extends="tournoi.page">
+		<put-attribute name="contextMenu" value="evolutionTournoi" />
+		<put-attribute name="contenu"
+			value="/jsp/tournoi/evolutionPhase2Contenu.jsp" />
+	</definition>
+
+	<definition name="tournoi.evolutionPhase3" extends="tournoi.page">
+		<put-attribute name="contextMenu" value="evolutionTournoi" />
+		<put-attribute name="contenu"
+			value="/jsp/tournoi/evolutionPhase3Contenu.jsp" />
+	</definition>
+	<definition name="tournoi.evolutionPhase3Init" extends="tournoi.page">
+		<put-attribute name="contextMenu" value="evolutionTournoi" />
+		<put-attribute name="contenu"
+			value="/jsp/tournoi/evolutionPhase3InitContenu.jsp" />
+	</definition>
+
+	<definition name="tournoi.evolutionPhase4" extends="tournoi.page">
+		<put-attribute name="contextMenu" value="evolutionTournoi" />
+		<put-attribute name="contenu"
+			value="/jsp/tournoi/evolutionPhase4Contenu.jsp" />
+	</definition>
+
+</tiles-definitions>

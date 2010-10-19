@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<package name="joueur" namespace="/joueur" extends="default">
+
+		<action name="accueil" class="pes.ihm.action.joueur.Accueil">
+			<result>joueur.accueil</result>
+		</action>
+
+		<action name="creation" class="pes.ihm.action.joueur.Creation"
+			method="initialiser">
+			<result>joueur.creation</result>
+		</action>
+		<action name="validerCreation" class="pes.ihm.action.joueur.Creation"
+			method="validerCreation">
+			<result name="success">joueur.creation</result>
+			<result name="input">joueur.creation</result>
+			<result name="error">joueur.creation</result>
+		</action>
+
+		<action name="consultation" class="pes.ihm.action.joueur.Consultation"
+			method="initialiser">
+			<result>joueur.consultation</result>
+		</action>
+		<action name="afficherJoueur" class="pes.ihm.action.joueur.Consultation"
+			method="afficher">
+			<result>joueur.consultation</result>
+		</action>
+		<action name="suppression" class="pes.ihm.action.joueur.Consultation"
+			method="supprimer">
+			<result name="success">joueur.consultation
+			</result>
+			<result name="error">joueur.consultation
+			</result>
+		</action>
+	</package>
+</struts>

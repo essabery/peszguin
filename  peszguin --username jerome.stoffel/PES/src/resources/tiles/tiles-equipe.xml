@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+	<!-- Pages de base pour le domaine (titre) -->
+	<definition name="sansOnglet.equipe.page" extends="sansOnglet.page">
+		<put-attribute name="titre" value="Tournois PES - Equipes" />
+	</definition>
+
+	<definition name="avecOnglet.equipe.page" extends="avecOnglet.page">
+		<put-attribute name="titre" value="Tournois PES - Equipes" />
+	</definition>
+
+	<definition name="equipe.page" extends="accueil.page">
+		<put-attribute name="titre" value="Tournois PES - Equipes" />
+	</definition>
+
+	<!-- Pages affichées -->
+	<definition name="equipe.accueil" extends="equipe.page">
+		<put-attribute name="contextMenu" value="equipe" />
+		<put-attribute name="contenu" value="/jsp/equipe/accueilContenu.jsp" />
+		<put-attribute name="messageInfo" value="/jsp/equipe/accueilInfo.jsp" />
+	</definition>
+
+	<definition name="equipe.creation" extends="equipe.page">
+		<put-attribute name="contextMenu" value="creationEquipe" />
+		<put-attribute name="contenu" value="/jsp/equipe/creationContenu.jsp" />
+		<put-attribute name="messageInfo" value="/jsp/equipe/creationSucces.jsp" />
+		<put-attribute name="messageErreur" value="/jsp/equipe/creationErreur.jsp" />
+	</definition>
+
+	<definition name="equipe.consultation" extends="equipe.page">
+		<put-attribute name="contextMenu" value="consultationEquipe" />
+		<put-attribute name="contenu"
+			value="/jsp/equipe/consultationContenu.jsp" />
+		<put-attribute name="messageInfo" value="/jsp/equipe/consultationSucces.jsp" />
+		<put-attribute name="messageErreur" value="/jsp/equipe/consultationErreur.jsp" />
+	</definition>
+
+</tiles-definitions>
