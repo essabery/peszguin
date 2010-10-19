@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="pes.domaine">
+	<class name="Equipe" table="EQUIPE">
+		<id name="id" type="integer" column="ID">
+			<generator class="native"></generator>
+		</id>
+		<property name="libelle" column="LIBELLE" type="string"></property>
+		<property name="poule" column="POULE" type="string"></property>
+		<property name="position" column="POSITION" type="integer"></property>
+		<many-to-one name="tournoi" class="Tournoi" column="ID_TOURNOI">
+		</many-to-one>
+		<many-to-one name="participant" class="Participant"
+			column="ID_PARTICIPANT"></many-to-one>
+		<set name="joueurs" table="JOUEUR_EQUIPE" lazy="false">
+			<key column="ID_EQUIPE"></key>
+			<many-to-many class="Joueur" column="ID_JOUEUR"></many-to-many>
+		</set>
+
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+
+<tiles-definitions>
+	<!--
+		===== MODELES DE PAGE DE BASE
+		========================================================
+	-->
+	<definition name="sansOnglet.page" template="/tiles/template/templateSansOnglet.jsp">
+		<put-attribute name="titre" value="Tournois PES" />
+		<put-attribute name="contextMenu" value="" />
+		<put-attribute name="bandeauTitre" value="/tiles/common/bandeauTitre.jsp" />
+		<put-attribute name="menuVertical" value="/tiles/common/menuVertical.jsp" />
+		<put-attribute name="messageInfo" value="" />
+		<put-attribute name="messageErreur" value="" />
+		<put-attribute name="contenu" value="" />
+	</definition>
+
+	<definition name="avecOnglet.page" template="/tiles/template/templateAvecOnglet.jsp">
+		<put-attribute name="titre" value="Tournois PES" />
+		<put-attribute name="contextMenu" value="" />
+		<put-attribute name="contextOnglet" value="" />
+		<put-attribute name="bandeauTitre" value="/tiles/common/bandeauTitre.jsp" />
+		<put-attribute name="menuVertical" value="/tiles/common/menuVertical.jsp" />
+		<put-attribute name="menuOnglets" value="/tiles/common/menuOnglets.jsp" />
+		<put-attribute name="messageInfo" value="" />
+		<put-attribute name="messageErreur" value="" />
+		<put-attribute name="contenu" value="" />
+	</definition>
+
+	<definition name="accueil.page" extends="sansOnglet.page">
+	</definition>
+
+	<!--
+		===== PAGES ACCUEIL ================================================
+	-->
+	<definition name="index" extends="sansOnglet.page">
+		<put-attribute name="contextMenu" value="accueil" />
+		<put-attribute name="contenu" value="/jsp/indexContenu.jsp" />
+	</definition>
+	
+</tiles-definitions>

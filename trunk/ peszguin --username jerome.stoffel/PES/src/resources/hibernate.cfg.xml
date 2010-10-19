@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+  "-//Hibernate/Hibernate Configuration DTD//EN"
+  "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory name="HibernateSessionFactory">
+		<property name="dialect">org.hibernate.dialect.MySQLInnoDBDialect
+		</property>
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.current_session_context_class">thread</property>
+
+		<property name="connection.url">jdbc:mysql://localhost:3306/PES</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password"></property>
+
+		<property name="show_sql">false</property>
+		<property name="connection.autocommit">true</property>
+
+		<!-- Mapping files -->
+		<mapping resource="hibernate/equipe.hbm.xml" />
+		<mapping resource="hibernate/joueur.hbm.xml" />
+		<mapping resource="hibernate/participant.hbm.xml" />
+		<mapping resource="hibernate/tournoi.hbm.xml" />
+		<mapping resource="hibernate/match.hbm.xml" />
+		<mapping resource="hibernate/evenement.hbm.xml" />
+
+	</session-factory>
+</hibernate-configuration>

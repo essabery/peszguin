@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+	<!-- Pages de base pour le domaine (titre) -->
+	<definition name="sansOnglet.joueur.page" extends="sansOnglet.page">
+		<put-attribute name="titre" value="Tournois PES - Joueurs" />
+	</definition>
+
+	<definition name="avecOnglet.joueur.page" extends="avecOnglet.page">
+		<put-attribute name="titre" value="Tournois PES - Joueurs" />
+	</definition>
+
+	<definition name="joueur.page" extends="accueil.page">
+		<put-attribute name="titre" value="Tournois PES - Joueurs" />
+	</definition>
+
+	<!-- Pages affichées -->
+	<definition name="joueur.accueil" extends="joueur.page">
+		<put-attribute name="contextMenu" value="joueur" />
+		<put-attribute name="contenu" value="/jsp/joueur/accueilContenu.jsp" />
+		<put-attribute name="messageInfo" value="/jsp/joueur/accueilInfo.jsp" />
+	</definition>
+
+	<definition name="joueur.creation" extends="joueur.page">
+		<put-attribute name="contextMenu" value="creationJoueur" />
+		<put-attribute name="contenu" value="/jsp/joueur/creationContenu.jsp" />
+		<put-attribute name="messageInfo" value="/jsp/joueur/creationSucces.jsp" />
+		<put-attribute name="messageErreur" value="/jsp/joueur/creationErreur.jsp" />
+	</definition>
+
+	<definition name="joueur.consultation" extends="joueur.page">
+		<put-attribute name="contextMenu" value="consultationJoueur" />
+		<put-attribute name="contenu"
+			value="/jsp/joueur/consultationContenu.jsp" />
+		<put-attribute name="messageInfo"
+			value="/jsp/joueur/consultationSupprimerSucces.jsp" />
+		<put-attribute name="messageErreur"
+			value="/jsp/joueur/consultationSupprimerErreur.jsp" />
+	</definition>
+
+</tiles-definitions>

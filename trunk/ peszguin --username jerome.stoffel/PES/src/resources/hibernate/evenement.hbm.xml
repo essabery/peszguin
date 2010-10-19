@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="pes.domaine">
+	<class name="Evenement" table="EVENEMENT">
+		<id name="id" type="integer" column="ID">
+			<generator class="native"></generator>
+		</id>
+
+		<property name="type" column="TYPE"
+			type="pes.domaine.ETypeEvenementUserType"></property>
+
+		<many-to-one name="match" class="Match" column="ID_MATCH"
+			insert="true" update="true"></many-to-one>
+		<many-to-one name="equipe" class="Equipe" column="ID_EQUIPE"></many-to-one>
+		<many-to-one name="joueur" class="Joueur" column="ID_JOUEUR"></many-to-one>
+
+		<property name="minute" column="MINUTE" type="integer"></property>
+
+	</class>
+</hibernate-mapping>

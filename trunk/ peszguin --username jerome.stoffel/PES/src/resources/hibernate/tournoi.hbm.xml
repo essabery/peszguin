@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="pes.domaine">
+	<class name="Tournoi" table="TOURNOI">
+		<id name="id" type="integer" column="ID">
+			<generator class="native"></generator>
+		</id>
+		<property name="date" column="DATE" type="date" />
+		<property name="libelle" column="LIBELLE" type="string" />
+		<property name="structure" column="STRUCTURE"
+			type="pes.domaine.EStructureTournoiUserType"></property>
+		<property name="statut" column="STATUT"
+			type="pes.domaine.EStatutTournoiUserType"></property>
+
+		<set name="equipes" inverse="false" table="EQUIPE">
+			<key column="ID_TOURNOI"></key>
+			<one-to-many class="Equipe" />
+		</set>
+
+		<set name="participants" table="PARTICIPANT_TOURNOI">
+			<key column="ID_TOURNOI"></key>
+			<many-to-many class="Participant" column="ID_PARTICIPANT"></many-to-many>
+		</set>
+
+		<set name="matchs" table="RENCONTRE" inverse="false">
+			<key column="ID_TOURNOI"></key>
+			<one-to-many class="Match"></one-to-many>
+		</set>
+	</class>
+</hibernate-mapping>
