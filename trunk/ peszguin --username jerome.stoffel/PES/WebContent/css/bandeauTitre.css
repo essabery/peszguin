@@ -1,0 +1,39 @@
+/*===========================================================================*/
+/* Page de styles par défaut pour le bandeau haut de l'application Octopusse*/
+/*===========================================================================*/
+
+
+#bandeauTitre a#logo  {
+	display: block;
+	text-decoration: none;
+	font-weight: bold;
+	text-align: center;
+	height: 140px;
+	width: 220px;
+	color: #3366aa;
+	background: url("../images/logo.png") no-repeat left top;
+	float: left;
+}
+
+#bandeauTitre a#logo:hover  {
+	background: url("../images/logo_zoom.png") no-repeat left top;
+}
+
+#bandeauTitre h1 {
+	padding-top:30px;
+	font-size: 150%;
+	color: white;
+	text-indent: 20px;
+	}
+
+#bandeauTitre h2 {
+	padding-top: 10px;
+	font-size: 120%;
+	color: white;
+	text-indent: 20px;
+	}
+
+#bandeauTitre {
+	background: #3366aa url("../images/fond_bandeau_haut.png") left top repeat-x;
+	height: 140px;
+}

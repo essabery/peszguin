@@ -1,0 +1,52 @@
+/*===========================================================================*/
+/* Page de styles par défaut pour le menu à onglets de l'appli modele web	 */
+/*===========================================================================*/
+
+#listeOnglets {
+	overflow: hidden;
+	width: 100%;
+	background:  #BCCADA;
+	font-family: arial, times, sans-serif;
+	font-size: 70%;
+	color: black;
+}
+
+#listeOnglets li {
+	list-style: none;
+	float: left;
+	margin-right: 1px;
+}
+
+#listeOnglets li a {
+	display: block;
+	background: url("../images/coin_gauche_fonce.png") no-repeat left top;
+	text-decoration: none;
+	color: white;
+	padding: 0px 0px 0px 10px;
+}
+
+
+#listeOnglets li a span {
+	display: block;
+	background: url("../images/coin_droite_fonce.png") no-repeat right top;
+	padding: 10px 10px 10px 0px;
+	}
+
+#listeOnglets li a:hover {
+	font-weight: bold;
+}
+
+#listeOnglets li#courant {
+	display: block;
+	background: url("../images/coin_gauche_clair.png") no-repeat left top;
+	text-decoration: none;
+	padding: 0px 0px 0px 10px;
+}
+
+#listeOnglets li#courant span {
+	display: block;
+	background: url("../images/coin_droite_clair.png") no-repeat right top;
+	padding: 10px 10px 10px 0px;
+}
+
+
