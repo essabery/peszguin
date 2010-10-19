@@ -1,0 +1,233 @@
+/*===========================================================================*/
+	/* Page de styles pour le contenu des pages de l'application                 */
+	/*===========================================================================*/
+#contenu {
+	padding: 2%;
+}
+
+#contenu p {
+	font-size: 80%;
+	padding-top: 1%;
+	line-height: 140%
+}
+
+#contenu h3 {
+	font-size: 90%;
+	padding-top: 1%;
+	color: navy;
+}
+
+#contenu a {
+	color: blue;
+}
+
+#contenu ul {
+	font-size: 80%;
+	padding-left: 5%;
+}
+
+#contenu ul li {
+	padding-top: 1%;
+}
+
+#contenu td.niveau {
+	border-top: 1px solid black;
+	font-weight: bold;
+}
+
+#contenu td.extGauche {
+	border-right: 1px solid black;
+}
+
+#contenu td.CARTON_JAUNE {
+	background: url("../images/jaune.png") no-repeat;
+	width: 16px;
+	height: 16px;
+}
+
+#contenu td.CARTON_ROUGE {
+	background: url("../images/rouge.png") no-repeat;
+	width: 16px;
+	height: 16px;
+}
+
+#contenu td.BUT {
+	background: url("../images/but.png") no-repeat;
+	width: 16px;
+	height: 16px;
+}
+
+#contenu td.XBLESSURE {
+	background: url("../images/blessure.png") no-repeat;
+	width: 16px;
+	height: 16px;
+}
+
+#contenu td.evenement {
+	font-size: 80%;
+}
+
+#contenu td.formEvenement {
+	border-top: 1px solid black;
+	font-weight: bold;
+}
+
+#contenu td.bold {
+	font-weight: bold;
+}
+
+#contenu table.test {
+	font-size: 80%;
+}
+/*---------------général-----------------------------------------------------*/
+.invisible {
+	display: none;
+}
+
+.titrePage {
+	margin-left: 15px;
+	margin-top: 10px;
+	font-weight: bolder;
+	font-size: 110%;
+}
+
+.champVariable {
+	color: blue;
+}
+
+.messageAttente {
+	text-align: center;
+	margin-top: 60px;
+	margin-bottom: 60px;
+	font-size: 110%;
+	color: #5E76B6;
+	text-decoration: blink;
+}
+
+/*---------------Formulaires----------------------------------------*/
+form {
+	margin-left: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+form label {
+	margin-right: 10px;
+	margin-bottom: 10px;
+	font-size: 100%;
+}
+
+form input {
+	margin-right: 10px;
+	margin-bottom: 10px;
+	font-size: 100%;
+}
+
+form .centrer {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+form .boutonSubmitCentre {
+	display: block;
+	margin-top: 30px;
+	margin-bottom: 40px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+}
+
+form .boutonSubmitGauche {
+	display: block;
+	margin-top: 30px;
+	margin-bottom: 40px;
+	margin-left: auto;
+}
+
+form .libelleCourt {
+	margin-left: 5px;
+	margin-right: 20px;
+	width: 50px;
+}
+
+form span.titreElement {
+	display: block;
+	width: 280px;
+	margin-right: 10px;
+	float: left;
+}
+
+form span.titreElementCourt {
+	display: block;
+	width: 100px;
+	margin-right: 10px;
+	float: left;
+}
+
+form.formCenter p.titreElement {
+	font-weight: bold;
+}
+
+select.transfert {
+	width: 200px;
+}
+
+input.flecheDroite {
+	background: url("../images/flecheDroite.png") no-repeat center top;
+	width: 45px;
+	height: 45px;
+}
+
+input.flecheGauche {
+	background: url("../images/flecheGauche.png") no-repeat center top;
+	width: 45px;
+	height: 45px;
+}
+
+table.infosEquipe {
+	border-width: 1px;
+	border-style: solid;
+	border-color: orange;
+	width: 300px;
+}
+
+table.infosEquipe td.head {
+	border-width: 1px;
+	border-style: solid;
+	border-color: orange;
+}
+
+/*---------------Messages d'erreur----------------------------------------*/
+.errorMessage {
+	margin-right: 10px;
+	margin-bottom: 10px;
+	color: red;
+	font-size: 100%;
+}
+
+/*-----------------Boutons radio l'un sous l'autre--------------------------*/
+.boutonsRadioRapproches {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+/*---------------Messages d'informations ou d'erreur en haut----------------------------------------*/
+#messageInfo p,#messageErreur p {
+	text-align: center;
+	font-weight: bold;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-left: 0px;
+	font-size: 80%;
+}
+
+#messageInfo p {
+	color: green;
+	border-bottom: solid 1px green;
+}
+
+#messageErreur p {
+	color: red;
+	border-bottom: solid 1px red;
+}

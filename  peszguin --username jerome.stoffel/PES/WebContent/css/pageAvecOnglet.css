@@ -1,0 +1,56 @@
+/*======================================================================*/
+/* Page de styles permettant de positionner les grands blocs 			*/
+/* pour le template avec onglets										*/
+/*======================================================================*/
+
+/*---Styles des balises prédéfinies---*/
+* {
+	margin: 0;
+	padding: 0;
+	font-family: arial, times, sans-serif;
+}
+
+body {
+	background-color: #eeeeff;
+	background: #F7FDFF url(../images/bande_menu.png) left top repeat-y;
+	margin-bottom: 180px;
+	overflow: hidden;
+}
+
+
+/*----Styles propres au bandeau de titre----------*/
+/*les styles des éléments contenus dans ce bloc sont définis dans bandeauTitre.css*/
+#bandeauTitre {
+}
+
+
+
+/*---Styles propres au menu-------------------*/
+/*les styles des éléments contenus dans ce bloc sont définis dans menuVertical.css*/
+#menuVertical{
+	float: left;
+}
+
+/*---Styles propres au menu à onglets-------------------*/
+/*les styles des éléments contenus dans ce bloc sont définis dansmenuOnglets.css*/
+#menuOnglets {
+	width: 100%;
+}
+
+
+/*---Position de la page principale et des éléments qui la composent-----*/
+/*les styles des éléments contenus dans les blocs ci-dessous sont définis dans contenuPage.css*/
+#contenuPage {
+	height: 100%;
+	width: auto;
+	overflow: auto;
+}
+
+#messageInfo {
+}
+
+#messageErreur {
+}
+
+#contenu {
+}
