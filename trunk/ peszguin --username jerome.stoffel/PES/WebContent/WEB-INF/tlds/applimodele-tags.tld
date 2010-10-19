@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE taglib PUBLIC
+    "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN"
+    "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+
+<taglib>
+	<tlib-version>1.0</tlib-version>
+	<jsp-version>1.0</jsp-version>
+	<short-name>applimodele-tags</short-name>
+	<uri>/applimodele-tags</uri>
+	<description>
+		Librairie des tags spécifiques à l'application modèle
+		Struts2-Tiles2
+	</description>
+	<tag>
+		<name>insertOnglets</name>
+		<tag-class>pes.ihm.tag.MenuOngletsTag</tag-class>
+		<body-content>JSP</body-content>
+		<description>
+			Permet de réaliser le menu d'onglet choisi en passant en
+			paramètre la liste d'onglets à afficher (via le menu dans
+			lequel on se
+			trouve) et l'onglet courant.
+		</description>
+	</tag>
+
+	<tag>
+		<name>insertMenuVertical</name>
+		<tag-class>
+			pes.ihm.tag.MenuVerticalTag
+		</tag-class>
+		<body-content>JSP</body-content>
+		<description>
+			Permet d'afficher le menu vertical à partir de l'item de
+			menu sur lequel on se trouve pour la page courante
+			(développer et
+			mettre en forme différente pour l'item
+			courant).
+		</description>
+	</tag>
+
+	<tag>
+		<name>insertLogo</name>
+		<tag-class>
+			pes.ihm.tag.Logo
+		</tag-class>
+		<body-content>JSP</body-content>
+		<description>
+			Permet d'afficher le logo en haut à gauche de la page,
+			avec lien vers la page
+			d'accueil et affichage de la date au format
+			jj/mm/aaaa
+		</description>
+		<attribute>
+			<name>datePattern</name>
+			<type>String</type>
+			<description>Pattern de la date.</description>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>insertTitreHaut</name>
+		<tag-class>
+			pes.ihm.tag.BandeauTitreTag
+		</tag-class>
+		<body-content>JSP</body-content>
+		<description>
+			Permet d'afficher le bandeau haut contextuel à partir de
+			l'item de menu sur lequel on se trouve pour la page
+			courante.
+		</description>
+	</tag>
+</taglib>
