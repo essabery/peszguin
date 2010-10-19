@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app 
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" 
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+
+	<display-name>PES</display-name>
+
+	<context-param>
+		<param-name>
+			org.apache.tiles.impl.BasicTilesContainer.DEFINITIONS_CONFIG
+		</param-name>
+		<param-value>
+			/WEB-INF/classes/tiles/tiles-general.xml,
+			/WEB-INF/classes/tiles/tiles-participant.xml,,
+			/WEB-INF/classes/tiles/tiles-tournoi.xml,,
+			/WEB-INF/classes/tiles/tiles-joueur.xml,
+			/WEB-INF/classes/tiles/tiles-equipe.xml
+		</param-value>
+	</context-param>
+
+	<!-- Action Servlet Configuration -->
+	<filter>
+		<filter-name>struts2</filter-name>
+		<filter-class>org.apache.struts2.dispatcher.FilterDispatcher
+		</filter-class>
+	</filter>
+
+	<filter>
+		<filter-name>HibernateFilter</filter-name>
+		<filter-class>pes.dao.util.HibernateSessionRequestFilter
+		</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>HibernateFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<!-- Tiles listener Configuration -->
+	<listener>
+		<listener-class>org.apache.tiles.web.startup.TilesListener
+		</listener-class>
+	</listener>
+
+	<servlet>
+		<servlet-name>CewolfServlet</servlet-name>
+		<servlet-class>de.laures.cewolf.CewolfRenderer</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CewolfServlet</servlet-name>
+		<url-pattern>*.cewolf</url-pattern>
+	</servlet-mapping>
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+	<!-- déclaration ds librairie de Tags tiles- -->
+	<taglib>
+		<taglib-uri>http://tiles.apache.org/tags-tiles</taglib-uri>
+		<taglib-location>/WEB-INF/tlds/tiles-jsp.tld</taglib-location>
+	</taglib>
+
+	<taglib>
+		<taglib-uri>/applimodele-tags</taglib-uri>
+		<taglib-location>
+			/WEB-INF/tlds/applimodele-tags.tld
+		</taglib-location>
+	</taglib>
+
+	<taglib>
+		<taglib-uri>http://displaytag.sf.net</taglib-uri>
+		<taglib-location>/WEB-INF/tlds/displaytag.tld</taglib-location>
+	</taglib>
+
+	<taglib>
+		<taglib-uri>/cewolf</taglib-uri>
+		<taglib-location>/WEB-INF/tlds/cewolf.tld</taglib-location>
+	</taglib>
+	
+		<taglib>
+		<taglib-uri>/struts-dojo-tags</taglib-uri>
+		<taglib-location>/WEB-INF/tlds/struts-dojo-tags.tld</taglib-location>
+	</taglib>
+</web-app>
