@@ -1,0 +1,20 @@
+/*====================================================================*/
+/* Correctifs pour faire fonctionner IE                               */
+/*====================================================================*/
+
+/*---Styles propres au menu-------------------*/
+#menuVertical {
+	margin-right: -3px;
+	width: 220px;
+}
+
+/*---Styles propres au contenu-------------------*/
+#contenuPage {
+	padding: 0;
+	width: 100%;
+}
+
+/*---Centrer (correction bug IE)----------------*/
+.centrerIe {
+	text-align: center;
+}

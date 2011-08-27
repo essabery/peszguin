@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<constant name="struts.ui.theme" value="simple" />
+	<constant name="struts.devMode" value="true" />
+
+	<include file="struts/struts-participant.xml" />
+	<include file="struts/struts-tournoi.xml" />
+	<include file="struts/struts-joueur.xml" />
+	<include file="struts/struts-equipe.xml" />
+
+	<package name="default" extends="struts-default">
+
+		<!--
+			Ajout du type de résultat "tiles" qui sera le type de résultat par
+			défaut (dans le fichier de config par défaut, jsp)
+		-->
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" default="true" />
+		</result-types>
+
+		<!--
+			Ajout d'une nouvelle pile d'intercepteurs, en modifiant la pile pour
+			exclure la recherche des setters des attributs de requête générés par
+			les displaytag (pour des id de tableaux allant de id1 à id3... à
+			augmenter si besoin) Cette pile devient la pile par défaut
+		-->
+		<interceptors>
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="defaultStack">
+					<param name="params.excludeParams">
+						dojo\..*,
+						d-49653-o,d-49653-s,d-49653-p,
+						d-49546-o,d-49546-s,d-49546-p,
+						d-49547-o,d-49547-s,d-49547-p,
+
+					</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="myStack" />
+	</package>
+
+	<!--
+		============ DEFINITION DES ACTIONS HORS SOUS-FICHIERS PAR
+		MENU=================
+	-->
+	<package name="accueil" extends="default" namespace="/">
+		<action name="accueil">
+			<result>index</result>
+		</action>
+	</package>
+</struts>

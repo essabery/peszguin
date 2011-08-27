@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+	<!-- Pages de base pour le domaine (titre) -->
+	<definition name="sansOnglet.participant.page" extends="sansOnglet.page">
+		<put-attribute name="titre" value="Tournois PES - Participants" />
+	</definition>
+
+	<definition name="participant.page" extends="sansOnglet.participant.page">
+		<put-attribute name="titre" value="Tournois PES - Participants" />
+	</definition>
+
+	<!-- Pages affichées -->
+	<definition name="participant.accueil" extends="participant.page">
+		<put-attribute name="contextMenu" value="participant" />
+		<put-attribute name="contenu"
+			value="/jsp/participant/accueilContenu.jsp" />
+		<put-attribute name="messageInfo" value="/jsp/participant/accueilInfo.jsp" />
+	</definition>
+
+	<definition name="participant.creation" extends="participant.page">
+		<put-attribute name="contextMenu" value="creationParticipant" />
+		<put-attribute name="contenu"
+			value="/jsp/participant/creationContenu.jsp" />
+		<put-attribute name="messageInfo"
+			value="/jsp/participant/creationSucces.jsp" />
+		<put-attribute name="messageErreur"
+			value="/jsp/participant/creationErreur.jsp" />
+	</definition>
+
+	<definition name="participant.consultation" extends="participant.page">
+		<put-attribute name="contextMenu" value="consultationParticipant" />
+		<put-attribute name="contenu"
+			value="/jsp/participant/consultationContenu.jsp" />
+		<put-attribute name="messageInfo"
+			value="/jsp/participant/consultationSupprimerSucces.jsp" />
+		<put-attribute name="messageErreur"
+			value="/jsp/participant/consultationSupprimerErreur.jsp" />
+	</definition>
+
+	<definition name="participant.hall" extends="participant.page">
+		<put-attribute name="contextMenu" value="hallParticipant" />
+		<put-attribute name="contenu" value="/jsp/participant/hallContenu.jsp" />
+	</definition>
+
+</tiles-definitions>

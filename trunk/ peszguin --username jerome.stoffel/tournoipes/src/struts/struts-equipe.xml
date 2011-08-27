@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<package name="equipe" namespace="/equipe" extends="default">
+
+		<action name="accueil" class="pes.ihm.action.equipe.Accueil">
+			<result>equipe.accueil</result>
+		</action>
+
+		<action name="creation" class="pes.ihm.action.equipe.Creation"
+			method="initialiser">
+			<result name="success">equipe.creation</result>
+		</action>
+		<action name="modificationFiltre" class="pes.ihm.action.equipe.Creation"
+			method="modifierFiltre">
+			<result name="success">equipe.creation</result>
+		</action>
+		<action name="ajoutJoueur" class="pes.ihm.action.equipe.Creation"
+			method="ajouterJoueurs">
+			<result name="success">equipe.creation</result>
+		</action>
+		<action name="suppressionJoueur" class="pes.ihm.action.equipe.Creation"
+			method="supprimerJoueurs">
+			<result name="success">equipe.creation</result>
+		</action>
+		<action name="validerCreation" class="pes.ihm.action.equipe.Creation"
+			method="validerCreation">
+			<result name="success">equipe.creation</result>
+			<result name="error">equipe.creation</result>
+		</action>
+
+		<action name="consultation" class="pes.ihm.action.equipe.Consultation"
+			method="initialiser">
+			<result>equipe.consultation</result>
+		</action>
+		<action name="afficherEquipe" class="pes.ihm.action.equipe.Consultation"
+			method="afficher">
+			<result>equipe.consultation</result>
+		</action>
+		<action name="modification" class="pes.ihm.action.equipe.Consultation"
+			method="modifier">
+			<result name="success">equipe.consultation
+			</result>
+			<result name="error">equipe.consultation
+			</result>
+		</action>
+		<action name="suppression" class="pes.ihm.action.equipe.Consultation"
+			method="supprimer">
+			<result name="success">equipe.consultation
+			</result>
+			<result name="error">equipe.consultation
+			</result>
+		</action>
+	</package>
+</struts>
