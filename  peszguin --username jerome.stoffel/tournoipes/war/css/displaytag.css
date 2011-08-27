@@ -1,0 +1,226 @@
+/*==========================================================================*/
+/* Page de styles pour les tableaux											*/
+/*     (à partir de la feuille fournie avec displaytag)			            */
+/*==========================================================================*/
+
+table.displayCenter {
+	border: 1px solid orange;
+	font-size: 80%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-right: auto;
+	margin-left: auto;
+	max-width: 800px;
+	text-align: center;
+}
+
+table.displayLeft {
+	border: 1px solid orange;
+	font-size: 80%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+}
+
+table th ,td  {
+	padding: 2px 4px 2px 4px !important;
+	text-align: left;
+	vertical-align: top;
+}
+
+table td.head {
+	background-color: #fc0;
+	font-weight: bold;
+}
+
+table td.resultRight {
+	text-align: right;
+}
+
+table td.resultCenter {
+	text-align: center;
+}
+
+table thead tr {
+	background-color: #fc0;
+	text-align: center;
+}
+
+table thead tr th {
+	text-align: center;
+}
+
+table th.sorted {
+	background-color: orange;
+}
+
+table th a,th a:visited {
+	color: black;
+}
+
+table th a:hover {
+	text-decoration: underline;
+	color: black;
+}
+
+table th.sorted a,th.sortable a {
+	background-position: right;
+	display: block;
+	width: 100%;
+}
+
+table th.sortable a {
+	background: url(../images/arrow_off.png) left no-repeat;
+	text-indent: 15px;
+	text-align: left;
+}
+
+table th.order1 a {
+	background: url(../images/arrow_down.png) left no-repeat;
+	text-indent: 15px;
+	text-align: left;
+}
+
+table th.order2 a {
+	background: url(../images/arrow_up.png) left no-repeat;
+	text-indent: 15px;
+	text-align: left;
+}
+
+table tr.odd {
+	background-color: #fff
+}
+
+table tr.tableRowEven,tr.even {
+	background-color: #fea
+}
+
+table td.infraLigneRight {
+	text-align: right;
+	font-size: 90%;
+	font-style: italic;
+}
+
+table td.infraLigneLeft {
+	text-align: left;
+	font-size: 90%;
+	font-style: italic;
+}
+
+table td.totalCenter {
+	background-color: #fc0;
+	font-weight: bold;
+	text-align: center;
+}
+
+table td.totalRight {
+	background-color: #fc0;
+	font-weight: bold;
+	text-align: right;
+}
+
+table div.exportlinks {
+	background-color: #eee;
+	border: 1px dotted #999;
+	padding: 2px 4px 2px 4px;
+	margin: 2px 0 10px 0;
+	width: 79%;
+}
+
+span.export {
+	padding: 0 4px 1px 20px;
+	display: inline;
+	display: block;
+	cursor: pointer;
+}
+
+span.excel {
+	background-image: url(../images/ico_file_excel.png);
+}
+
+span.csv {
+	background-image: url(../img/ico_file_csv.png);
+}
+
+span.xml {
+	background-image: url(../img/ico_file_xml.png);
+}
+
+span.pdf {
+	background-image: url(../img/ico_file_pdf.png);
+}
+
+span.rtf {
+	background-image: url(../img/ico_file_rtf.png);
+}
+
+span.pagebanner {
+	font-size: 80%;
+	background-color: #eee;
+	border: 1px dotted #999;
+	padding: 2px 4px 2px 4px;
+	width: 80%;
+	margin-top: 10px;
+	display: block;
+	border-bottom: none;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+span.pagelinks {
+	font-size: 70%;
+	background-color: #eee;
+	border: 1px dotted #999;
+	padding: 2px 4px 2px 4px;
+	width: 80%;
+	display: block;
+	border-top: none;
+	margin-bottom: -5px;
+	margin-left: auto;
+	text-align: center;
+	margin-right: auto;
+}
+
+/*---------------Titres des tableaux----------------------------------------*/
+.titreTableauGauche, .titreTableauInactifGauche {
+	margin-top: 20px;
+	font-weight: bolder;
+	font-size: 100%;
+}
+
+.titreTableauCentre, .titreTableauInactifCentre {
+	margin-top: 20px;
+	text-align: center;
+	font-weight: bolder;
+	font-size: 100%;
+}
+
+.titreTableauInactifGauche, .titreTableauInactifCentre {
+	color: gray;
+}
+
+/*--------------Messages en l'absence de données à afficher------------------*/
+.messagePasDeTableau {
+	margin-top: 10px;
+	margin-bottom: 50px;
+	font-weight: lighter;
+	color: blue;
+}
+
+/*---------------Note de lecture de tableau--------------------------------------*/
+.noteBasTableauGauche {
+	width: 500px;
+	font-size: 70%;
+	font-style: italic;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.noteBasTableauCentree {
+	font-size: 70%;
+	font-style: italic;
+	margin-top: 0px;
+	margin-bottom: 15px;
+	text-align: center;
+}

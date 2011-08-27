@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<package name="participant" namespace="/participant" extends="default">
+
+		<action name="accueil" class="pes.ihm.action.participant.Accueil">
+			<result>participant.accueil</result>
+		</action>
+
+		<action name="creation">
+			<result>participant.creation</result>
+		</action>
+		<action name="validerCreation" class="pes.ihm.action.participant.Creation"
+			method="validerCreation">
+			<result name="success">participant.creation</result>
+			<result name="input">participant.creation</result>
+			<result name="error">participant.creation</result>
+		</action>
+
+		<action name="consultation" class="pes.ihm.action.participant.Consultation"
+			method="initialiser">
+			<result>participant.consultation</result>
+		</action>
+		<action name="afficherParticipant" class="pes.ihm.action.participant.Consultation"
+			method="afficher">
+			<result>participant.consultation</result>
+		</action>
+		<action name="suppression" class="pes.ihm.action.participant.Consultation"
+			method="supprimer">
+			<result name="success">participant.consultation
+			</result>
+			<result name="error">participant.consultation
+			</result>
+		</action>
+
+		<action name="hall" class="pes.ihm.action.participant.Hall">
+			<result>participant.hall</result>
+		</action>
+	</package>
+</struts>
