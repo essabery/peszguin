@@ -1,0 +1,67 @@
+<html>
+#{extends 'main.html' /} #{set title:'Gestion de tournois PES' /} #{set
+header:'Gestion de tournois PES - Équipes' /}
+
+
+<div class="table">
+<table id="equipes">
+	<caption>Liste des équipes disponibles</caption>
+	<thead>
+		<tr>
+			<th>Libellé</th>
+			<th></th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		#{list items:equipes, as:'e'}
+		<tr>
+			<td>${e.libelle}</td>
+			<td><a href="/equipe/info?id=${e.id}" class="info"
+				title="Afficher l'équipe"></a></td>
+			<td><a href="/equipe/delete?id=${e.id}" class="delete"
+				title="Supprimer l'équipe"
+				onclick="return confirm('Êtes-vous certain de vouloir supprimer l'équipe ${e.libelle}');"></a></td>
+		</tr>
+		#{/list}
+	</tbody>
+</table>
+</div>
+#{if info}
+#{doLayout /}
+#{/if}
+<div class="un centre"><a href="@{Equipes.nouveau}" class="bouton">Ajouter
+équipe</a></div>
+<script>
+	$(document).ready(function() {
+		$('#equipes').dataTable({
+			"bAutoWidth" : false,
+			"bDeferRender" : false,
+			"bFilter" : true,
+			"bInfo" : false,
+			"bLengthChange" : false,
+			"bPaginate" : false,
+			"bProcessing" : true,
+			"bSort" : true,
+			"sScrollY" : '200px',
+			"aaSorting" : [ [ 0, 'asc' ] ],
+			"asStripClasses" : [ 'odd', 'even' ],
+			"bScrollCollapse" : true,
+			"sDom" : 't<"recherche equipe"f>r',
+			"oLanguage" : {
+				"sEmptyTable" : "Aucune équipe n'a été trouvée",
+				"sInfoEmpty" : "Aucune équipe n'a été trouvée",
+				"sSearch" : "Recherche:",
+				"sZeroRecords" : "Aucune équipe ne correspond à la recherche"
+			},
+			"aoColumnDefs" : [ {
+				"sWidth" : "18px",
+				"aTargets" : [ 1 ]
+			}, {
+				"sWidth" : "18px",
+				"aTargets" : [ 2 ]
+			} ]
+		});
+	});
+</script>
+</html>

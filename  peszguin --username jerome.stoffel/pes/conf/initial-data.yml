@@ -1,0 +1,115 @@
+﻿Poste(gardien):
+    libelle: Gardien
+Poste(defenseur):
+    libelle: Défenseur
+Poste(milieu):
+    libelle: Milieu
+Poste(attaquant):
+    libelle: Attaquant
+Poste(autre):
+    libelle: Autre
+Joueur(j1):
+    nom: Sirigu
+    prenom: Salvatore
+    poste: gardien
+Joueur(j2):
+    nom: Sakho
+    prenom: Mamadou
+    poste: defenseur
+Joueur(j3):
+    nom: Pastore
+    prenom: Javier
+    poste: milieu
+Joueur(j4):
+    nom: Gameiro
+    prenom: Kevin
+    poste: attaquant
+Joueur(j5):
+    nom: Maradona
+    prenom: Diego
+    poste: attaquant
+Joueur(j6):
+    nom: Hoarau
+    prenom: Guillaume
+    poste: attaquant
+Joueur(j7):
+    nom: Menez
+    prenom: Jeremy
+    poste: attaquant
+Joueur(j8):
+    nom: Matuidi
+    prenom: Blaise
+    poste: milieu
+Joueur(j9):
+    nom: Makélélé
+    prenom: Claude
+    poste: milieu
+Joueur(j10):
+    nom: Pauleta
+    prenom: Pedro
+    poste: attaquant
+Joueur(j11):
+    nom: Ronaldinho
+    prenom: 
+    poste: attaquant
+Joueur(j12):
+    nom: joueur 12
+    prenom: 
+    poste: attaquant
+Joueur(j13):
+    nom: joueur 13
+    prenom: 
+    poste: attaquant
+Joueur(j14):
+    nom: joueur 14
+    prenom: 
+    poste: attaquant
+Joueur(j15):
+    nom: joueur 15
+    prenom: 
+    poste: attaquant
+Joueur(j16):
+    nom: joueur 16
+    prenom: 
+    poste: attaquant
+Joueur(j17):
+    nom: joueur 17
+    prenom: 
+    poste: attaquant
+Joueur(j18):
+    nom: joueur 18
+    prenom: 
+    poste: attaquant
+Joueur(j19):
+    nom: joueur 19
+    prenom: 
+    poste: attaquant
+Joueur(j20):
+    nom: joueur 20
+    prenom: 
+    poste: attaquant
+Joueur(j21):
+    nom: joueur 21
+    prenom: 
+    poste: attaquant
+Joueur(j22):
+    nom: joueur 22
+    prenom: 
+    poste: attaquant
+Joueur(j23):
+    nom: joueur 23
+    prenom: 
+    poste: attaquant
+Joueur(j24):
+    nom: joueur 24
+    prenom: 
+    poste: attaquant
+Joueur(j25):
+    nom: joueur 25
+    prenom: 
+    poste: attaquant
+Participant(p1):
+    nom: Stoffel
+    prenom: Jerome
+    pseudo: Freez
+    poste: attaquant

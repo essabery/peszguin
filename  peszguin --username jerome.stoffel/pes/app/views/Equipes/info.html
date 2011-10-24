@@ -1,0 +1,36 @@
+<html>
+#{extends '/Equipes/index.html' /} #{set title:'Gestion de tournois PES'
+/} #{set header:'Gestion de tournois PES - Équipes' /}
+
+
+<div id="joueurs">
+<fieldset><legend>Gardiens</legend>
+<ul>
+	#{list items:gardiens, as:'g'}
+	<li>${g.nom} ${g.prenom}</li>
+	#{/list}
+</ul>
+</fieldset>
+<fieldset><legend>Défenseurs</legend>
+<ul>
+	#{list items:defenseurs, as:'d'}
+	<li>${d.nom} ${d.prenom}</li>
+	#{/list}
+</ul>
+</fieldset>
+<fieldset><legend>Milieux</legend>
+<ul>
+	#{list items:milieux, as:'m'}
+	<li>${m.nom} ${m.prenom}</li>
+	#{/list}
+</ul>
+</fieldset>
+<fieldset><legend>Attaquants</legend>
+<ul>
+	#{list items:attaquants, as:'a'}
+	<li>${a.nom} ${a.prenom}</li>
+	#{/list}
+</ul>
+</fieldset>
+</div>
+</html>

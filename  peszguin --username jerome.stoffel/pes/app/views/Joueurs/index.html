@@ -1,0 +1,86 @@
+<html>
+#{extends 'main.html' /} #{set title:'Gestion de tournois PES' /} #{set
+header:'Gestion de tournois PES - Joueurs' /}
+
+
+<div class="table">
+<form id="filtre" action="@{Joueurs.index}" method="POST">
+<table id="joueurs">
+	<caption>Liste des joueurs</caption>
+	<thead>
+		<tr>
+			<th></th>
+			<th>Nom</th>
+			<th>Prénom</th>
+			<th>Poste</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		#{list items:joueurs, as:'j'}
+		<tr>
+			<td><a href="/joueur/info?id=${j.id}" class="info"
+				title="Statistiques du joueur"></a></td>
+			<td>${j.nom}</td>
+			<td>${j.prenom}</td>
+			<td>${j.poste.libelle}</td>
+			<td><a href="/joueur/delete?id=${j.id}" class="delete"
+				title="Supprimer le joueur"
+				onclick="return confirm('Êtes-vous certain de vouloir supprimer ${j.prenom} ${j.nom} ?');"></a></td>
+		</tr>
+		#{/list}
+	</tbody>
+	<tfoot>
+		<tr>
+
+			<td colspan="3" align="center">
+			<p class="poste">Poste <select name="filtre" onchange="filtrer()">
+				<option value="0" #{if filtre==0} selected="selected"#{/if}>Tout</option>
+				#{list items:postes, as:'p'}
+				<option value=${p.id} #{if filtre==p.id} selected="selected"#{/if}>${p.libelle}</option>
+				#{/list}
+			</select></p>
+			</td>
+		</tr>
+	</tfoot>
+</table>
+</form>
+</div>
+<div class="un centre"><a href="@{Joueurs.nouveau}" class="bouton">Ajouter
+joueur</a></div>
+<script>
+	function filtrer() {
+		document.getElementById("filtre").submit();
+	}
+	$(document).ready(function() {
+		$('#joueurs').dataTable({
+			"bAutoWidth" : false,
+			"bDeferRender" : false,
+			"bFilter" : true,
+			"bInfo" : false,
+			"bLengthChange" : false,
+			"bPaginate" : false,
+			"bProcessing" : true,
+			"bSort" : true,
+			"sScrollY" : '450px',
+			"aaSorting" : [ [ 1, 'asc' ] ],
+			"asStripClasses" : [ 'odd', 'even' ],
+			"bScrollCollapse" : true,
+			"sDom" : 't<"recherche joueur"f>r',
+			"oLanguage" : {
+				"sEmptyTable" : "Aucun joueur n'a été trouvé",
+				"sInfoEmpty" : "Aucun joueur n'a été trouvé",
+				"sSearch" : "Recherche:",
+				"sZeroRecords" : "Aucun joueur ne correspond à la recherche"
+			},
+			"aoColumnDefs" : [ {
+				"sWidth" : "18px",
+				"aTargets" : [ 0 ]
+			}, {
+				"sWidth" : "18px",
+				"aTargets" : [ 4 ]
+			} ]
+		});
+	});
+</script>
+</html>

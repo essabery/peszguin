@@ -1,0 +1,18 @@
+<html>
+#{extends 'main.html' /} #{set title:'Gestion de tournois PES' /} #{set
+header:'Gestion de tournois PES - Nouveau participant' /}
+<div class="formulaire add_participant">
+<form action="@{Participants.add}" method="post" id="add">
+
+<p class="champ"><span class="libelle">Nom</span><span class="input"><input
+	type="text" name="nom"> </span></p>
+<p class="champ"><span class="libelle">Prénom</span><span
+	class="input"><input type="text" name="prenom"> </span></p>
+<p class="champ"><span class="libelle">Pseudo</span><span
+	class="input"><input type="text" name="pseudo"> </span></p>
+</form>
+</div>
+<div class="deux centre"><a href="javascript:add.submit();"
+	class="bouton">Valider</a> <a href="@{Participants.index}"
+	class="bouton">Retour</a></div>
+</html>

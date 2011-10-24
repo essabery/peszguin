@@ -1,0 +1,31 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                                       Accueil.index
+GET     /joueur                                 Joueurs.index
+POST    /joueur                                 Joueurs.index
+GET     /joueur/nouveau                         Joueurs.nouveau
+POST    /joueur/add                             Joueurs.add
+GET     /joueur/delete                          Joueurs.delete
+GET     /equipe                                 Equipes.index
+GET     /equipe/info                            Equipes.info
+GET     /equipe/nouveau                         Equipes.nouveau
+POST    /equipe/nouveau                         Equipes.nouveau
+POST    /equipe/add                             Equipes.add
+GET     /equipe/nouveau                         Equipes.nouveau
+GET     /participant                            Participants.index
+GET     /participant/nouveau                    Participants.nouveau
+POST    /participant/add                        Participants.add
+GET     /participant/delete                     Participants.delete
+GET     /tournoi                                Tournois.index
+
+# Ignore favicon requests
+GET     /favicon.ico                            404
+
+# Map static resources from the /app/public folder to the /public path
+GET     /public/                                staticDir:public
+
+# Catch all
+*       /{controller}/{action}                  {controller}.{action}

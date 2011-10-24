@@ -1,0 +1,22 @@
+<html>
+#{extends 'main.html' /} #{set title:'Gestion de tournois PES' /} #{set
+header:'Gestion de tournois PES - Nouveau joueur' /}
+<div class="formulaire add_joueur">
+<form action="@{Joueurs.add}" method="post" id="add">
+
+<p class="champ"><span class="libelle">Nom</span><span class="input"><input
+	type="text" name="nom"> </span></p>
+<p class="champ"><span class="libelle">Prénom</span><span
+	class="input"><input type="text" name="prenom"> </span></p>
+<p class="champ"><span class="libelle">Poste</span><span
+	class="input"><select name="idPoste">
+	<option value="-1">Choisir un poste</option>
+	#{list items:postes, as:'p'}
+	<option value=${p.id}>${p.libelle}</option>
+	#{/list}
+</select> </span></p>
+</form>
+</div>
+<div class="deux centre"><a href="javascript:add.submit();"
+	class="bouton">Valider</a> <a href="@{Joueurs.index}" class="bouton">Retour</a></div>
+</html>

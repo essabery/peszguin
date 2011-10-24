@@ -1,0 +1,21 @@
+#contenu a.delete {
+	display: block;
+	background: url("/public/images/delete.png") no-repeat transparent;
+	width: 16px;
+	height: 16px;
+}
+
+#contenu a.info {
+	display: block;
+	background: url("/public/images/info.png") no-repeat transparent;
+	width: 16px;
+	height: 16px;
+}
+
+#contenu a.delete.fieldset {
+	display: inline;
+	background: url("/public/images/delete.png") no-repeat transparent;
+	width: 16px;
+	height: 16px;
+	cursor: pointer;
+}
