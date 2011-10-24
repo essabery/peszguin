@@ -1,0 +1,198 @@
+/*----------------------------------------------------------*/
+/*                         TEMPLATE                         */
+/*----------------------------------------------------------*/
+div#top {
+	width: 80%;
+	margin: 0 auto;
+	border-radius: 40px;
+	height: 80px;
+}
+
+div#contenu {
+	float: none;
+	width: 80%;
+	height: 700px;
+	margin: 10px auto 0px auto;
+	padding-top: 50px;
+	border-radius: 40px;
+}
+
+div#contenu div.formulaire {
+	width: 75%;
+	margin: 0 auto 10px auto;
+	border: 2px solid #1A4B4B;
+	border-radius: 10px;
+	padding-top: 10px;
+}
+
+/*----------------------------------------------------------*/
+/*                         COULEURS                         */
+/*----------------------------------------------------------*/
+body {
+	background-color: #1A4B4B;
+	color: #A0E6E6;
+}
+
+div#top {
+	border: 1px solid #1E8585;
+	background-color: #1E8585;
+}
+
+div#contenu {
+	border: 1px solid #4F7373;
+	background-color: #1E8585;
+}
+
+div#contenu a.bouton,div#contenu input.submit.bouton,div#menu ul.niv1 li a
+	{
+	border: 1px solid #1E8585;
+	background-color: #5A9999;
+	color: white;
+}
+
+div#contenu a.bouton:hover,div#contenu input.submit.bouton:hover,div#menu ul.niv1 li a:hover
+	{
+	background-color: #4F7373;
+	background: #4F7373;
+	color: white;
+	font-weight: bold;
+}
+
+div#contenu div.table {
+	border: 2px solid #1A4B4B;
+}
+
+div#contenu table tbody tr td {
+	color: #4F7373;
+}
+
+div#contenu table thead tr {
+	background-color: #4F7373;
+	color: white;
+}
+
+div#contenu table tbody tr.odd {
+	background-color: #A0E6E6;
+}
+
+div#contenu table tbody tr.even {
+	background-color: #87E6E6;
+}
+
+div#contenu a.bouton:hover,div#contenu input.submit.bouton:hover {
+	color: white;
+	font-weight: bold;
+}
+
+/*----------------------------------------------------------*/
+/*                         BOUTONS                          */
+/*----------------------------------------------------------*/
+div#contenu .un {
+	width: 220px;
+	height: 35px;
+}
+
+div#contenu .deux {
+	width: 450px;
+	height: 35px;
+}
+
+div#contenu .centre {
+	margin: 0 auto;
+}
+
+div#contenu a.bouton,div#contenu input.submit.bouton {
+	display: block;
+	float: left;
+	width: 200px;
+	height: 30px;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 20px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+div#contenu a.bouton:hover,div#contenu input.submit.bouton:hover {
+	cursor: pointer;
+}
+
+/*----------------------------------------------------------*/
+/*                        TABLEAUX                          */
+/*----------------------------------------------------------*/
+div#contenu div.table {
+	width: 75%;
+	margin: 0 auto 10px auto;
+	padding: 10px 10px 0px 10px;
+	border-radius: 10px;
+}
+
+div#contenu table caption {
+	font-size: x-large;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+div#contenu div.recherche.participant,div#contenu div.recherche.equipe {
+	margin-top: 10px;
+}
+
+div#contenu div.recherche.joueur {
+	position: relative;
+	width: 260px;
+	top: -44px;
+}
+
+div#contenu div.table table tbody {
+	color: #1D6363;
+}
+
+/*----------------------------------------------------------*/
+/*                     FORMULAIRES                          */
+/*----------------------------------------------------------*/
+div#contenu div.formulaire p.champ {
+	margin: 0 auto;
+	height: 30px;
+}
+
+div#contenu div.formulaire p.champ span.libelle {
+	display: block;
+	float: left;
+	width: 45%;
+	text-align: right;
+	padding-right: 10px;
+	position: relative;
+	top: 3px;
+}
+
+div#contenu div.formulaire p.champ span.input {
+	display: block;
+	float: left;
+	width: 45%;
+}
+
+/*----------------------------------------------------------*/
+/*                    PARTICULARITES                        */
+/*----------------------------------------------------------*/
+div#contenu div.formulaire.add_joueur,div#contenu div.formulaire.add_participant
+	{
+	height: 115px;
+}
+
+div#contenu div#joueurs {
+	margin: 0px 0px 0px 40px;
+}
+
+div#contenu div#joueurs fieldset {
+	display: block;
+	float: left;
+	margin: 5px;
+	width: 20%;
+	height: 200px;
+	border: 2px solid #1A4B4B;
+	border-radius: 25px;
+}
+
+div#contenu li.li_select {
+	cursor: pointer;
+}

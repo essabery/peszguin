@@ -1,0 +1,68 @@
+<html>
+#{extends 'main.html' /} #{set title:'Gestion de tournois PES' /} #{set
+header:'Gestion de tournois PES - Participants' /}
+
+
+<div class="table">
+<table id="participants">
+	<caption>Liste des participants</caption>
+	<thead>
+		<tr>
+			<th></th>
+			<th>Nom</th>
+			<th>Prénom</th>
+			<th>Pseudo</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		#{list items:participants, as:'p'}
+		<tr>
+			<td><a href="/participant/info?id=${p.id}" class="info"
+				title="Statistiques du participant"></a></td>
+			<td>${p.nom}</td>
+			<td>${p.prenom}</td>
+			<td>${p.pseudo}</td>
+			<td><a href="/participant/delete?id=${p.id}" class="delete"
+				title="Supprimer le participant"
+				onclick="return confirm('Êtes-vous certain de vouloir supprimer ${p.prenom} *${p.pseudo}* ${p.nom} ?');"></a></td>
+		</tr>
+		#{/list}
+	</tbody>
+</table>
+</div>
+<div class="un centre"><a href="@{Participants.nouveau}"
+	class="bouton">Ajouter participant</a></div>
+<script>
+	$(document).ready(function() {
+		$('#participants').dataTable({
+			"bAutoWidth" : false,
+			"bDeferRender" : false,
+			"bFilter" : true,
+			"bInfo" : false,
+			"bLengthChange" : false,
+			"bPaginate" : false,
+			"bProcessing" : true,
+			"bSort" : true,
+			"sScrollY" : '450px',
+			"aaSorting" : [ [ 1, 'asc' ] ],
+			"asStripClasses" : [ 'odd', 'even' ],
+			"bScrollCollapse" : true,
+			"sDom" : 't<"recherche participant"f>r',
+			"oLanguage" : {
+				"sEmptyTable" : "Aucun participant n'a été trouvé",
+				"sInfoEmpty" : "Aucun participant n'a été trouvé",
+				"sSearch" : "Recherche:",
+				"sZeroRecords" : "Aucun participant ne correspond à la recherche"
+			},
+			"aoColumnDefs" : [ {
+				"sWidth" : "18px",
+				"aTargets" : [ 0 ]
+			}, {
+				"sWidth" : "18px",
+				"aTargets" : [ 4 ]
+			} ]
+		});
+	});
+</script>
+</html>

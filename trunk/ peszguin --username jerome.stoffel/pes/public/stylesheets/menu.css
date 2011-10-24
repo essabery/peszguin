@@ -1,0 +1,38 @@
+div#menu {
+	height: 40px;
+	float: none;
+	margin-left: 35px;
+}
+
+div#header {
+	height: 40px;
+	text-align: center;
+	font-size: x-large;
+	font-weight: bold;
+	text-align: center;
+	float: none;
+}
+
+div#menu ul.niv1 {
+	margin: 0;
+	padding: 0 0 0 25px;
+	height: 30px;
+}
+
+div#menu ul.niv1 li {
+	float: left;
+	display: block;
+	width: 200px;
+	height: 100%;
+	margin: 0px 10px 0 10px;
+	list-style: none;
+}
+
+div#menu ul.niv1 li a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 20px;
+}

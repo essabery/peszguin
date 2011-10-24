@@ -1,0 +1,153 @@
+<html>
+#{extends 'main.html' /} #{set title:'Gestion de tournois PES' /} #{set
+header:'Gestion de tournois PES - Nouvelle équipe' /}
+<div class="formulaire add_equipe">
+<form action="@{Equipes.add}" method="post" id="add">
+
+<p class="champ"><span class="libelle">Libellé</span><span
+	class="input"><input type="text" name="libelle"> </span></p>
+<table id="tablejoueurs">
+	<thead>
+		<tr>
+			<th>Nom</th>
+			<th>Prénom</th>
+			<th>Poste</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		#{list items:joueurs, as:'j'}
+		<tr>
+			<td>${j.nom}</td>
+			<td>${j.prenom}</td>
+			<td>${j.poste.libelle}</td>
+			<td><a href="#" class="add" title="Ajouter"
+				onclick="select(${j.id},${j.poste.id},'${j.nom}','${j.prenom}')">Add</a></td>
+		</tr>
+		#{/list}
+	</tbody>
+	<tfoot>
+		<tr>
+
+			<td colspan="3" align="center">
+			<p class="poste">Poste <select name="filtre" onchange="filtrer()">
+				<option value="0" #{if filtre==0} selected="selected"#{/if}>Tout</option>
+				#{list items:postes, as:'p'}
+				<option value=${p.id} #{if filtre==p.id} selected="selected"#{/if}>${p.libelle}</option>
+				#{/list}
+			</select></p>
+			</td>
+		</tr>
+	</tfoot>
+</table>
+<input type="hidden" name="selection" id="selection"
+	value="${selection}"></form>
+</div>
+
+<div id="joueurs">
+<fieldset><legend>Gardiens</legend>
+<ul id="1">
+	#{list items:gardiens, as:'g'}
+	<li onclick="del(this,${g.id})" class="li_select">${g.nom}
+	${g.prenom}</li>
+	#{/list}
+</ul>
+</fieldset>
+<fieldset><legend>Défenseurs</legend>
+<ul id="2">
+	#{list items:defenseurs, as:'d'}
+	<li onclick="del(this,${d.id})" class="li_select">${d.nom}
+	${d.prenom}</li>
+	#{/list}
+</ul>
+</fieldset>
+<fieldset><legend>Milieux</legend>
+<ul id="3">
+	#{list items:milieux, as:'m'}
+	<li onclick="del(this,${m.id})" class="li_select">${m.nom}
+	${m.prenom}</li>
+	#{/list}
+</ul>
+</fieldset>
+<fieldset><legend>Attaquants</legend>
+<ul id="4">
+	#{list items:attaquants, as:'a'}
+	<li onclick="del(this,${a.id})" class="li_select">${a.nom}
+	${a.prenom}</li>
+	#{/list}
+</ul>
+</fieldset>
+</div>
+
+<div class="deux centre"><a href="javascript:add.submit();"
+	class="bouton">Valider</a> <a href="@{Equipes.index}" class="bouton">Retour</a></div>
+<script>
+	function filtrer() {
+		add.action = "nouveau";
+		add.submit();
+	}
+	function select(id_joueur, id_poste, nom, prenom) {
+		var nouveauLI = document.createElement("li");
+		nouveauLI.setAttribute("class","li_select");
+		nouveauLI.setAttribute("onclick","del(this,"+ id_joueur +")");
+		var nouveautexteli = document.createTextNode(nom+ " "+prenom);
+		document.getElementById(id_poste).appendChild(nouveauLI);
+		nouveauLI.appendChild(nouveautexteli);
+		if (selection.value == "") {
+			selection.value = id_joueur;
+		} else {
+			selection.value = selection.value+","+id_joueur;
+		}
+	}
+	function del(li,id_joueur) {
+		var ul = li.parentNode;
+		ul.removeChild(li);
+		var ok=false;
+		if (selection.value == ""+id_joueur) {
+			alert('seul');
+			selection.value = "";
+			ok = true;
+		} else if (selection.value.substring(0,selection.value.indexOf(','))==""+id_joueur) {
+			alert('premier');
+			selection.value = selection.value.substring(0,selection.value.indexOf(',')+1);
+			ok = true;
+		} else {
+			alert('autre');
+			selection.value = selection.value.replace(","+id_joueur+",",",");
+			ok = true;
+		}
+		if (ok == false) {
+			alert('dernier');
+			selection.value = selection.value.substring(selection.value.lastIndexOf(','));
+		}
+		alert(selection.value);
+	}
+	$(document).ready(function() {
+		$('#tablejoueurs').dataTable({
+			"bAutoWidth" : false,
+			"bDeferRender" : false,
+			"bFilter" : true,
+			"bInfo" : false,
+			"bLengthChange" : false,
+			"bPaginate" : false,
+			"bProcessing" : true,
+			"bSort" : true,
+			"sScrollY" : '200px',
+			"aaSorting" : [ [ 0, 'asc' ] ],
+			"asStripClasses" : [ 'odd', 'even' ],
+			"bScrollCollapse" : true,
+			"sDom" : 't<"recherche joueur"f>r',
+			"oLanguage" : {
+				"sEmptyTable" : "Aucun joueur n'a été trouvé",
+				"sInfoEmpty" : "Aucun joueur n'a été trouvé",
+				"sSearch" : "Recherche:",
+				"sZeroRecords" : "Aucun joueur ne correspond à la recherche"
+			},
+			"aoColumnDefs" : [ {
+				"sWidth" : "18px",
+				"aTargets" : [ 3 ]
+			} ]
+		});
+	});
+</script>
+</html>
